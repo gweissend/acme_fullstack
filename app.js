@@ -22,3 +22,10 @@ app.delete('/api/users/:id', (req, res, next)=> {
     .then( () => res.sendStatus(204))
     .catch(next);
 });
+
+app.put('/api/users/:id', (req, res, next) => {
+  User.findByPk(req.params.id)
+    .then(user => user.update({ active: !user.active }))
+    .then(user => res.send(user))
+    .catch(next);
+});
