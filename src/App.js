@@ -4,6 +4,7 @@ import { actions } from './store';
 import { connect } from 'react-redux'; 
 import Nav from './Components/Nav';
 import Users from './Components/Users';
+import ActiveUsers from './Components/ActiveUsers';
 
 class App extends Component{
   componentDidMount(){
@@ -18,6 +19,7 @@ class App extends Component{
           loading && <div>...loading</div>
         }
         <Route path='/users' component={ Users } />
+        <Route path='/activeUsers' render={ () => <Users isActive={true} />} />
       </HashRouter>
     );
   }

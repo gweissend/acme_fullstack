@@ -15,9 +15,9 @@ const Users = ({ users, destroyUser })=> {
   );
 };
 
-export default connect(({ users }, { isActive })=> {
+export default connect(({ users })=> {
   return {
-    users: isActive ? users.filter( user => user.active) : users
+    users: users.filter( user => user.active)
   };
 }, (dispatch)=> {
   return {
