@@ -4,7 +4,6 @@ import { actions } from './store';
 import { connect } from 'react-redux'; 
 import Nav from './Components/Nav';
 import Users from './Components/Users';
-import ActiveUsers from './Components/ActiveUsers';
 
 class App extends Component{
   componentDidMount(){
